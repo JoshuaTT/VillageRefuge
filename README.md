@@ -1,7 +1,7 @@
 # VillageRefuge
 
-Placee a beacon of tier 1 or > near a bell. <br>
-When the village is bell is rung, there is a chance a village 'refugee' will appear at the beacon. <br>
+Place a beacon of tier 1 or > near a bell. <br>
+When the village bell is rung, there is a chance a village 'refugee' will appear at the beacon. <br>
 The chance of villager spawn is related to beacon tier. <br>
 
 Spawn rates:
