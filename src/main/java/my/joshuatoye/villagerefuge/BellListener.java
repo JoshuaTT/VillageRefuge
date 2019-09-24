@@ -6,6 +6,7 @@ import org.bukkit.block.Beacon;
 import org.bukkit.block.Block;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Villager;
+import org.bukkit.entity.ZombieVillager;
 import org.bukkit.event.Event;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.EventHandler;
@@ -56,9 +57,16 @@ public class BellListener implements Listener {
 
         Random rand = new Random(System.currentTimeMillis());
         if(rand.nextInt(UPPER_BOUND) > THRESHOLD - (THRESHOLD * beaconModifier[beaconTier])) {
-            Villager v = (Villager) foundBeacon.getWorld().spawnEntity(foundBeacon.getLocation(), EntityType.VILLAGER);
-            Villager.Type[] types = Villager.Type.values();
-            v.setVillagerType(types[rand.nextInt(7)]);
+            int villagerBiome = rand.nextInt(8);
+            if(villagerBiome != 7) {
+                Villager v = (Villager) foundBeacon.getWorld().spawnEntity(foundBeacon.getLocation(), EntityType.VILLAGER);
+                Villager.Type[] types = Villager.Type.values();
+                v.setVillagerType(types[rand.nextInt(7)]);
+            }
+            else
+            {
+                ZombieVillager zv = (ZombieVillager) foundBeacon.getWorld().spawnEntity(foundBeacon.getLocation(), EntityType.ZOMBIE_VILLAGER);
+            }
         }
 
     }
