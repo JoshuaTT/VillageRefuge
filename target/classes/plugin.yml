@@ -1,0 +1,6 @@
+name: VillageRefuge
+version: 1.0
+main: my.joshuatoye.villagerefuge.VillageRefuge
+api-version: 1.13
+authors: [JoshuaToye]
+description: This mod will enable the ability to revive a village using a beacon.
